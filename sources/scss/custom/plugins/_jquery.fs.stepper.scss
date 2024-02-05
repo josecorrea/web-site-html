@@ -1,0 +1,115 @@
+//
+// Formstone Stepper Plugin
+// --------------------------------------------------
+
+.stepper {
+	position: relative;
+	display: inline-block;
+	max-width: 70px;
+	width: 70px;
+
+
+	input[type="number"] {
+		width: 100%;
+		padding-left: 20px;
+		padding-right: 20px;
+		text-align: center;
+		-moz-appearance: textfield;
+	}
+
+	input[type=number]::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+	}
+
+	&-arrow {
+		position: absolute;
+		top: 50%;
+		margin-top: -10px;
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		font-size: 16px;
+		font-family: $mi;
+		cursor: pointer;
+		color: $gray-700;
+		transition: .3s all ease;
+
+		&:hover {
+			color: $primary
+		}
+
+		&.up {
+			right: 0;
+			text-align: left;
+
+			&:before {
+				content: '\e316';
+			}
+		}
+
+		&.down {
+			left: 0;
+			text-align: right;
+
+			&:before {
+				content: '\e313';
+			}
+		}
+	}
+
+	&.disabled {
+		.stepper-arrow {
+			pointer-events: none;
+			opacity: .5;
+		}
+	}
+}
+
+.stepper-arrow {
+	display: none !important;
+}
+
+.stepper input[type="number"] {
+	padding: 0 10px;
+	min-height: 39px;
+	border-radius: 4px;
+	border: 1px solid #828282;
+	min-width: 98px;
+	text-align: left;
+	//font-family: $font-family-sec;
+	font-size: 18px;
+	letter-spacing: -0.03em;
+	margin-bottom: 0;
+}
+
+.form-wrap-donate {
+	padding-left: 25px !important;
+	min-width: 140px;
+	flex-shrink: 0;
+	.form-label {
+		opacity: 1;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 5px;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.form-donate {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	@include spacing(10px);
+
+	@include media-breakpoint-up(xl) {
+		@include spacing(5px);
+	}
+}
+
+* + .form-donate { margin-top: 30px; }
+
+@include media-breakpoint-up(xl) {
+	* + .form-donate { margin-top: 45px; }
+}

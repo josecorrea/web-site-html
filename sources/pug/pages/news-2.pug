@@ -1,0 +1,90 @@
+extends  ../_skeleton
+
+include ../components/_ui-posts
+include ../components/_ui-pagination
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'News 2'
+
+block page 
+  // Page Header
+  include ../sections/_header-classic
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    img: 'images/bg-breadcrumbs-about.jpg'
+  })
+
+
+  section.section.section-lg.bg-gray-1
+    .container
+      .row.row-50
+        .col-md-6.col-lg-4
+          +post-modern({
+            img: 'post-modern-1-370x255',
+            badgeMod: 'badge-primary',
+            badge: 'Charity',
+            date: 'Sep 02, 2021',
+            title: 'How Are Charities With National Offices Rated?\n'
+          })
+        .col-md-6.col-lg-4
+          +post-modern({
+            classMod: 'post-modern-reverse',
+            img: 'post-modern-2-370x255',
+            badgeMod: 'badge-secondary',
+            badge: 'news',
+            date: 'Jun 02, 2021',
+            title: 'Delivering On The Promise To Reach Every Child'
+          })
+        .col-md-6.col-lg-4
+          +post-modern-text({
+            badge: 'Charity',
+            date: 'July 02, 2021',
+            title: 'Navigating The Complex Childcare System\n'
+          })
+            p Eabitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
+
+        .col-md-6.col-lg-4
+          +post-modern({
+            classMod: 'post-modern-reverse',
+            img: 'post-modern-3-370x255',
+            badgeMod: 'badge-secondary',
+            badge: 'news',
+            date: 'Jul 21, 2021',
+            title: 'Coaching for Fundraisers Winner Announced\n'
+          })
+        .col-md-6.col-lg-4
+          +post-modern({
+            img: 'post-modern-4-370x255',
+            badgeMod: 'badge-secondary',
+            badge: 'news',
+            date: 'Nov 02, 2021',
+            title: 'Volunteering for Children in Africa: Personal Experience'
+          })
+        .col-md-6.col-lg-4
+          +post-modern({
+            classMod: 'post-modern-reverse',
+            img: 'post-modern-5-370x255',
+            date: 'Oct 21, 2021',
+            title: 'How to Report Charity Fraud: 3 Easy Steps to Remember\n'
+          })
+        .col-md-6.col-lg-4
+          +post-modern({
+            img: 'post-modern-6-370x255',
+            badgeMod: 'badge-primary',
+            badge: 'Charity',
+            date: 'Aug 02, 2021',
+            title: 'Equity And Care Through Universal Health Coverage'
+          })
+        .col-md-6.col-lg-4
+          +post-modern-text({
+            badge: 'Children',
+            badgeMod: 'badge-pink',
+            date: 'Dec 12, 2021',
+            title: 'Calling On World Leaders To Stop Children Starving'
+          })
+            p Eabitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
+  // Page Footer
+  include ../sections/_footer-minimal

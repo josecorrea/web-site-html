@@ -1,0 +1,119 @@
+extends  ../_skeleton
+
+include ../components/_ui-posts
+include ../components/_ui-pagination
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'News'
+
+block page 
+  // Page Header
+  include ../sections/_header-classic
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    img: 'images/bg-breadcrumbs-about.jpg'
+  })
+
+
+  section.section.section-lg.bg-default
+    .container
+      .row.row-70.justify-content-xl-between
+        .col-lg-8
+          .row.row-50.justify-content-center
+            .col-md-6
+              +post-classic({
+                img: 'post-classic-4-370x255',
+                title: 'Are We Delivering On The Promise To Reach Every Child?',
+                date: 'Jun 02, 2021',
+                tagMod: 'post-classic-tag-secondary',
+                tag: 'News'
+              })
+            .col-md-6
+              +post-classic({
+                img: 'post-classic-2-370x255',
+                title: 'Coaching for Fundraisers Winner Announced\n',
+                date: 'Jul 21, 2021',
+                tagMod: 'post-classic-tag-secondary',
+                tag: 'News'
+              })
+            .col-md-6
+              +post-classic({
+                img: 'post-classic-5-370x255',
+                title: 'Equity And Care Through Universal Health Coverage',
+                date: 'Aug 02, 2021',
+                tagMod: 'post-classic-tag-secondary',
+                tag: 'News'
+              })
+            .col-md-6
+              +post-classic({
+                img: 'post-classic-3-370x255',
+                title: 'How Are Charities With National Offices Rated?',
+                date: 'Sep 02, 2021',
+                tag: 'Charity'
+              })
+            .col-md-6
+              +post-classic({
+                img: 'post-classic-1-370x255',
+                title: 'How to Report Charity Fraud: 3 Easy Steps to Remember',
+                date: 'April 25, 2021',
+                tagMod: 'post-classic-tag-secondary-2',
+                tag: 'Tips'
+              })
+            .col-md-6
+              +post-classic({
+                img: 'post-classic-6-370x255',
+                title: 'Volunteering for Children in Africa: Personal Experience',
+                date: 'Nov 02, 2021',
+                tagMod: 'post-classic-tag-secondary',
+                tag: 'News'
+              })
+            +pagination-bootstrap('pagination-classic', 1, 3)
+        .col-lg-4.col-xl-3
+          .block-aside
+            .block-aside-item
+              h5.block-aside-title Categories
+              ul.category-list
+                li.active: a(href='#') All Categories
+                  span 12
+                li: a(href='#') Charity
+                  span 3
+                li: a(href='#') News
+                  span 4
+                li: a(href='#') Tips
+                  span 6
+                li: a(href='#') Children
+                  span 2
+            .block-aside-item
+              h5.block-aside-title Search News
+              // RD Search
+              form.rd-search.form-sm(action="search-results.html", method="GET", data-search-live="rd-search-results-live")
+                .form-wrap
+                  label(for="rd-search-form-input" class="form-label") Search
+                  input(class="form-input" id="rd-search-form-input" type="text" name="s" autocomplete="off")
+                  button(type='submit').button-search.icon.linearicons-magnifier
+
+            .block-aside-item
+              h5.block-aside-title Latest News
+              .post-minimal
+                h5.post-minimal-title: a(href='blog-post.html') Navigating the Complex Childcare System
+                p.post-minimal-date April 25, 2021
+              .post-minimal
+                h5.post-minimal-title: a(href='blog-post.html') Calling On World Leaders to Stop Children Starving
+                p.post-minimal-date April 25, 2021
+
+            .block-aside-item
+              h5.block-aside-title Newsletter
+              // RD Mailform
+              form.rd-mailform.text-start.form-sm(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+
+                .form-wrap
+                  label.form-label(for="contact-email") Enter Your E-mail
+                  input#contact-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+
+                .form-button
+                  button(type="submit").button.button-block.button-primary Subscribe
+  // Page Footer
+  include ../sections/_footer-minimal

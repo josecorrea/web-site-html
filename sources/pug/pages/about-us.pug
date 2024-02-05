@@ -1,0 +1,222 @@
+extends  ../_skeleton
+
+include ../components/_ui-box-icon
+include ../components/_ui-team
+include ../components/_ui-gallery-item
+
+block variables
+  - var activeCategory = 'about-us'
+  - var pageName = 'About Us'
+
+block page 
+  // Page Header
+  include ../sections/_header-classic
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    img: 'images/bg-breadcrumbs-about.jpg'
+  })
+
+  section.section.section-lg.bg-gray-1.bg-gray-1-decor
+    .container
+      .row.row-50
+        .col-lg-6.pe-xl-5
+          +jpg('about-us-1-518x430')
+        .col-lg-6
+
+            h3 About Helper
+            .text-with-divider
+              .divider
+              h4.text-opacity-70 We are committed to helping wounded kids find their place.
+
+            p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesqu
+            p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+
+  section.section.section-lg.bg-default
+    .container
+      h3.text-center Our Mission
+      .row.row-85
+        .col-md-6.col-lg-4
+          +box-icon-modern({
+            classMod: 'decorate-triangle',
+            icon: 'linearicons-earth icon-primary',
+            title: 'Achieving Change'
+          })
+            p Grandis, albus decors etiam desiderium de noster, clemens vita.
+        .col-md-6.col-lg-4
+          +box-icon-modern({
+            classMod: 'decorate-circle',
+            icon: 'linearicons-umbrella2 icon-primary',
+            title: 'Care & Protection'
+          })
+            p Cum advena peregrinationes, omnes brabeutaes manifestum germanus.
+        .col-md-6.col-lg-4
+          +box-icon-modern({
+            classMod: 'decorate-rectangle',
+            icon: 'linearicons-baby2 icon-primary',
+            title: 'Saving Children'
+          })
+            p Cum zirbus favere, omnes habenaes talem barbatus, brevis fraticinidaes.
+        .col-md-6.col-lg-4
+          +box-icon-modern({
+            classMod: 'decorate-rectangle',
+            icon: 'linearicons-sun icon-primary',
+            title: 'Peace On The Planet'
+          })
+            p Cum solitudo favere, omnes exsules consumere superbus, pius fermiumes.
+        .col-md-6.col-lg-4
+          +box-icon-modern({
+            classMod: 'decorate-triangle',
+            icon: 'linearicons-leaf icon-primary icon-xl-min',
+            title: 'Increasing Awareness'
+          })
+            p Cum lixa accelerare, omnes xiphiases tractare festus, regius demolitionees.
+        .col-md-6.col-lg-4
+          +box-icon-modern({
+            classMod: 'decorate-circle',
+            icon: 'linearicons-share2 icon-primary',
+            title: 'Sharing Happiness'
+          })
+            p Cum aonides peregrinationes, omnes nutrixes experientia lotus, alter lixaes.
+
+  section.section.section-lg.bg-gray-1
+    .container
+      h3.text-center Our Team
+      .row.g-0
+        .col-md-6.col-lg-4
+          +team-classic({
+            img: 'team-classic-1-390x252',
+            name: 'Jane Smith',
+            text: 'Executive director'
+          })
+        .col-md-6.col-lg-4
+          +team-classic({
+            img: 'team-classic-2-390x252',
+            name: 'Albert Martinez',
+            text: 'Adoption program Director'
+          })
+        .col-md-6.col-lg-4
+          +team-classic({
+            img: 'team-classic-3-390x252',
+            name: 'Ann Allen',
+            text: 'Educational program Director'
+          })
+        .col-md-6.col-lg-4
+          +team-classic({
+            img: 'team-classic-4-390x252',
+            name: 'Evelyn Perez',
+            text: 'IT Director'
+          })
+        .col-md-6.col-lg-4
+          +team-classic({
+            img: 'team-classic-5-390x252',
+            name: 'Daniel Bryant',
+            text: 'Community support Manager'
+          })
+        .col-md-6.col-lg-4
+          +team-classic({
+            img: 'team-classic-6-390x252',
+            name: 'Louis Powell',
+            text: 'Assistant property Manager'
+          })
+  section.section.section-xl.bg-gray-700
+    .container
+      .row.row-50
+        .col-sm-6.col-lg-3
+          article.counter-classic
+            .counter-classic-main
+              .counter 500
+            p.counter-classic-title Volunteers
+        .col-sm-6.col-lg-3
+          article.counter-classic
+            .counter-classic-main
+              .counter 12
+
+            p.counter-classic-title Programs
+        .col-sm-6.col-lg-3
+          article.counter-classic
+            .counter-classic-main
+              .counter 34
+              span.small k
+            p.counter-classic-title Children
+        .col-sm-6.col-lg-3
+          article.counter-classic
+            .counter-classic-main
+              .counter 4
+
+            p.counter-classic-title Offices
+
+
+  section.section
+    .row.row-30(data-isotope-group='gallery')
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-1-465x383',
+            imgOriginal: 'images/gallery-1-original.jpg'
+          })
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-2-465x383',
+            imgOriginal: 'images/gallery-2-original.jpg'
+          })
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-3-465x383',
+            imgOriginal: 'images/gallery-3-original.jpg'
+          })
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-4-465x383',
+            imgOriginal: 'images/gallery-4-original.jpg'
+          })
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-5-465x383',
+            imgOriginal: 'images/gallery-5-original.jpg'
+          })
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-6-465x383',
+            imgOriginal: 'images/gallery-6-original.jpg'
+          })
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-7-465x383',
+            imgOriginal: 'images/gallery-7-original.jpg'
+          })
+      .col-12.col-sm-6.col-md-4.col-lg-3.wow-outer
+        .wow.slideInDown
+          +gallery-item-classic({
+            img: 'gallery-8-465x383',
+            imgOriginal: 'images/gallery-8-original.jpg'
+          })
+
+  section.section-lg.text-center
+    .container
+      .wow-outer
+        .wow.slideInDown
+          h3 Partners
+      // Owl Carousel
+      .owl-carousel.owl-dots-primary.dots-offset-lg.owl-carousel-lg(data-items='1' data-sm-items='2', data-dots-each="2"  data-lg-items='4' data-dots='true' data-nav='false' data-stage-padding='0', data-loop='false', data-margin='30', data-mouse-drag="false")
+        a(href='#').box-sponsor.box-sponsor-modern.wow-outer
+          .wow.fadeInUp
+            +png('logo-1-270x121')
+        a(href='#').box-sponsor.box-sponsor-modern.wow-outer
+          .wow.fadeInUp
+            +png('logo-2-270x121')
+        a(href='#').box-sponsor.box-sponsor-modern.wow-outer
+          .wow.fadeInUp
+            +png('logo-3-270x121')
+        a(href='#').box-sponsor.box-sponsor-modern.wow-outer
+          .wow.fadeInUp
+            +png('logo-4-270x121')
+
+  include ../sections/_footer-minimal

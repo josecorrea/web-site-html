@@ -1,0 +1,15 @@
+//- causes
+mixin causes( obj )
+  article.box-causes
+    .box-causes-img
+      +jpg( obj.img )
+      a.button.button-sm.button-primary(href='single-cause-page.html') Donate
+    h4.fw-medium: a(href='single-cause-page.html')= obj.title
+    p.box-causes-donate
+      span.box-causes-donate-complete= obj.donate.complete
+      =" "
+      | of
+      =" "
+      span= obj.donate.all
+      =" "
+      | raised

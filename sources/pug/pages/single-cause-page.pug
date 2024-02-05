@@ -1,0 +1,67 @@
+extends  ../_skeleton
+
+include ../components/_ui-box-icon
+include ../components/_ui-team
+include ../components/_ui-gallery-item
+include ../components/_ui-causes
+
+block variables
+  - var activeCategory = 'causes'
+  - var pageName = 'Single Cause Page'
+
+block page
+  // Page Header
+  include ../sections/_header-classic
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    img: 'images/bg-breadcrumbs-about.jpg'
+  })
+
+  section.section.section-lg.bg-gray-1.bg-gray-1-decor
+    .container
+      .row.row-50
+        .col-lg-6
+          .innset-xl-right-50: +jpg('single-cause-page-01-777x651')
+        .col-lg-6
+          h3 Preventing Hunger
+          article.progress-linear.progress-causes
+            .progress-header
+              span.progress-value 55
+              h4.progress-title: span Our Goal
+            .progress-bar-linear-wrap
+              .progress-bar-linear
+          p.box-causes-donate
+            span.box-causes-donate-complete $12,180
+            =" "
+            | of
+            =" "
+            span $35,000
+            =" "
+            | raised
+
+
+          p Primus mineralis etiam pugnas idoleum est. Fides barbatus magister est. Eheu, nuclear vexatum iacere! A falsis, onus castus frondator. Hercle, orgia mirabilis!, pius clabulare! Galataes velum, tanquam regius coordinatae. Cum gabalium mori, omnes demissioes promissio gratis, lotus accolaes.
+          p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+          .form-donate
+
+            .form-wrap.form-wrap-donate
+              label.form-label(for='donate-value') $
+              input.form-input#donate-value(type='number' data-zeros='true' value='12.00' min='1' max='20')
+
+            .form-wrap.form-wrap-radio
+              label.radio-inline
+                input(name='input-group-radio' value='radio-1' type='radio' )
+                | $5.00
+              label.radio-inline
+                input(name='input-group-radio' value='radio-2' type='radio')
+                | $10.00
+              label.radio-inline
+                input(name='input-group-radio' value='radio-3' type='radio')
+                | $15.00
+              label.radio-inline
+                input(name='input-group-radio' value='radio-3' type='radio' checked)
+                | Custom amount
+          button.button.button-primary.button-sm Donate
+  include ../sections/_footer-minimal

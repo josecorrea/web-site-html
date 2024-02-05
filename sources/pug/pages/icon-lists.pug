@@ -1,0 +1,99 @@
+extends  ../_skeleton
+
+include ../components/_ui-box-icon
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'Icon Lists'
+
+block page 
+  // Page Header
+  include ../sections/_header-classic
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    img: 'images/bg-breadcrumbs-about.jpg'
+  })
+
+
+  section.section.section-lg.bg-gray-1.text-center
+    .container
+      h3 Icon List #1
+      .row.row-50
+        .col-md-6.col-lg-4
+          +box-icon-classic({
+            classMod: 'decorate-triangle decorate-color-secondary',
+            icon: 'linearicons-mustache-glasses icon-gradient-1',
+            title: 'Best Service'
+          })
+            p Morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam,
+        .col-md-6.col-lg-4
+          +box-icon-classic({
+            classMod: 'decorate-circle decorate-color-secondary-2',
+            icon: 'linearicons-radar icon-gradient-2',
+            title: 'Reputation'
+          })
+            p Eheu, ausus! Cur stella nocere? Varius, fidelis caesiums foris examinare de placidus, teres byssus,
+        .col-md-6.col-lg-4
+          +box-icon-classic({
+            classMod: 'decorate-rectangle decorate-color-primary',
+            icon: 'linearicons-teacup icon-gradient-3',
+            title: 'Safety & Security'
+          })
+            p Teres monss ducunt ad bulla. Cum cotta cadunt, omnes canises attrahendam raptus, barbatus caesiumes,
+
+
+
+
+  // Buttons with Icons
+  section.section.section-lg.bg-gray-700
+    .container
+      h3.text-center Icon List #2
+      .row.row-85
+        .col-md-6.col-lg-4
+          +box-icon-modern({
+            classMod: 'decorate-triangle',
+            icon: 'linearicons-bus2 icon-gradient-1',
+            title: 'Best Service'
+          })
+            p Morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        .col-md-6.col-lg-4
+          +box-icon-modern({
+            classMod: 'decorate-circle',
+            icon: 'linearicons-hamburger icon-gradient-2',
+            title: 'Reputation'
+          })
+            p Barbatus, alter fraticinidas callide aperto de superbus, altus xiphias.
+        .col-md-6.col-lg-4
+          +box-icon-modern({
+            classMod: 'decorate-rectangle',
+            icon: 'linearicons-music-note2 icon-gradient-4',
+            title: 'Safety & Security'
+          })
+            p Nobilis, alter gemnas tandem examinare de rusticus, clemens elogium.
+        .col-md-6.col-lg-4
+          +box-icon-modern({
+            classMod: 'decorate-circle',
+            icon: 'linearicons-mustache-glasses icon-gradient-3',
+            title: 'Dedication'
+          })
+            p Festus, altus orexiss velox fallere de emeritis, salvus extum.
+        .col-md-6.col-lg-4
+          +box-icon-modern({
+            classMod: 'decorate-triangle',
+            icon: 'linearicons-radar icon-gradient-1',
+            title: 'Experience'
+          })
+            p Superbus, brevis fugas superbe prensionem de pius, regius bubo.
+        .col-md-6.col-lg-4
+          +box-icon-modern({
+            classMod: 'decorate-rectangle',
+            icon: 'linearicons-teacup icon-gradient-2',
+            title: 'Reliability'
+          })
+            p Ferox, camerarius historias grauiter carpseris de raptus, fidelis medicina.
+
+
+  // Page Footer
+  include ../sections/_footer-minimal

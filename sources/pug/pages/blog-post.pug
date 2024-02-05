@@ -1,0 +1,107 @@
+extends  ../_skeleton
+
+include ../components/_ui-posts
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Blog Post'
+
+block page 
+	// Page Header
+	include ../sections/_header-classic
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName],
+		title: 'Are We Delivering On The Promise \n' +
+						'To Reach Every Child?\n',
+		img: 'images/bg-breadcrumbs-about.jpg'
+	})
+
+	section.section.section-lg.bg-default
+		.container
+			.row.row-50.justify-content-lg-between
+				.col-lg-6
+					ul.blog-post-meta
+						li: a(href='#').badge.badge-secondary News
+						li
+							span.icon.mdi.mdi-clock
+							| May 11, 2021
+						li
+							span.icon.mdi.mdi-eye
+							| 345 views
+					h3.blog-post-title The Results of Our Work in 2018: Deep Analysis
+					.blog-post-content
+						p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+						p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+				.col-lg-6.col-xl-5
+					+jpg('blog-post-1-518x569')
+			.row
+				.col-12
+					+jpg('blog-post-2-1170x456') 
+			.row.row-50
+				.col-lg-7.order-lg-2
+					h3.blog-post-title The Role of Volunteers in Our Charity’s Work
+					.blog-post-content
+						p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will
+						article.quote-primary
+							.quote-primary-body
+
+								.quote-primary-text: p.q Morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, tristique senectus et netus et malesuada fames ac turpis egestas
+							.quote-primary-footer
+								.bg-dot
+								p.quote-primary-cite Jane Smith
+						p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
+						
+						ul.list-marked
+							li Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+							li Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
+								
+				.col-lg-5.pe-lg-5
+					.row.row-50
+						.col-sm-6.col-lg-12
+							+jpg('blog-post-3-398x283')
+						.col-sm-6.col-lg-12
+							+jpg('blog-post-4-398x283')
+			.row
+				.col-12
+					.blog-post-share.text-lg-end
+						ul.list-inline
+							li.thin-title Share post
+							li: a(href='#').icon.icon-sm.fa-facebook
+							li: a(href='#').icon.icon-sm.fa-instagram
+							li: a(href='#').icon.icon-sm.fa-twitter
+							li: a(href='#').icon.icon-sm.fa-youtube-play
+							
+	section.section.section-lg.bg-default
+		.container
+			h3.text-center Related Posts
+			.row
+				.col-12
+					// Owl Carousel
+					.owl-carousel(data-items='1', data-md-items='2' data-lg-items='3' data-dots='true' data-nav='false' data-stage-padding='15', data-loop='false', data-margin='30', data-mouse-drag="false")
+						+post-classic({
+							img: 'post-classic-2-370x255',
+							title: 'Coaching for Fundraisers Winner Announced\n',
+							date: 'April 25, 2021',
+							tagMod: 'post-classic-tag-secondary',
+							tag: 'News'
+						})
+						+post-classic({
+							img: 'post-classic-7-370x255',
+							title: 'Navigating The Complex Childcare System\n',
+							date: 'April 25, 2021',
+							tagMod: 'post-classic-tag-secondary-2',
+							tag: 'Children'
+						})
+						+post-classic({
+							img: 'post-classic-1-370x255',
+							title: 'How to Report Charity Fraud: \n' +
+											'3 Easy Steps to Remember\n',
+							date: 'April 25, 2018',
+							tag: 'Charity'
+						})
+						
+						
+	// Page Footer
+	include ../sections/_footer-minimal

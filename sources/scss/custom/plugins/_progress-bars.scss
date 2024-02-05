@@ -1,0 +1,94 @@
+/*
+*
+* Progress Bars
+*/
+
+//
+// Linear Progress Bars
+//
+
+.progress-linear {
+	position: relative;
+	text-align: left;
+
+	.progress-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include spacing(10px);
+	}
+
+	.progress-bar-linear-wrap {
+		height: 10px;
+		background: $gray-200;
+	}
+
+	.progress-bar-linear {
+		width: 0;
+		height: inherit;
+		background: $primary;
+		transition: 1s all ease-in-out;
+	}
+
+	.progress-value {
+		font-weight: 700;
+		color: $gray-300;
+		&::after {
+			content: "%";
+		}
+	}
+}
+
+* + .progress-bar-linear-wrap {
+	margin-top: 8px;
+}
+
+.progress-linear + .progress-linear {
+	margin-top: 15px;
+}
+
+@include media-breakpoint-up(lg) {
+	.progress-linear + .progress-linear {
+		margin-top: 25px;
+	}
+}
+
+
+.progress-causes {
+	max-width: 451px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	.progress-value {
+		display: none;
+	}
+
+	.progress-title {
+		margin-right: 15px;
+		font-weight: 400;
+		color: rgba(21, 21, 21, 0.7);
+	}
+
+	.progress-bar-linear-wrap,
+	.progress-bar-linear {
+		border-radius: 100px;
+	}
+
+	.progress-bar-linear-wrap {
+		flex-grow: 1;
+
+		min-width: 250px;
+		height: 16px;
+		background-color: $white;
+		border: 1px solid #BDBDBD;
+	}
+
+	.progress-bar-linear {
+		height: 14px;
+	}
+
+	@include media-breakpoint-up(sm) {
+		flex-wrap: nowrap;
+	}
+}

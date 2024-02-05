@@ -1,0 +1,86 @@
+extends  ../_skeleton
+
+include ../components/_ui-box-icon
+include ../components/_ui-team
+include ../components/_ui-gallery-item
+include ../components/_ui-causes
+
+block variables
+  - var activeCategory = 'causes'
+  - var pageName = 'Causes'
+
+block page
+  // Page Header
+  include ../sections/_header-classic
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    img: 'images/bg-breadcrumbs-causes.jpg'
+  })
+
+  section.section.section-lg.bg-gray-1.bg-gray-1-decor
+    .container
+      .row.row-50.row-lg-60.row-xl-100
+        .col-md-6.col-lg-4.wow-outer
+          .wow.fadeInUp
+            +causes({
+              img: 'causes-01-372x396',
+              title: 'Recycling for Charity',
+              donate: {
+                complete: '$92,160',
+                all: '$100,000'
+              }
+            })
+        .col-md-6.col-lg-4.wow-outer
+          .wow.fadeInUp
+            +causes({
+              img: 'causes-02-372x396',
+              title: 'Clean Water For People',
+              donate: {
+                complete: '$52,380',
+                all: '$55,000'
+              }
+            })
+        .col-md-6.col-lg-4.wow-outer
+          .wow.fadeInUp
+            +causes({
+              img: 'causes-04-372x396',
+              title: 'Children’s Education',
+              donate: {
+                complete: '$42,280',
+                all: '$45,000'
+              }
+            })
+        .col-md-6.col-lg-4.wow-outer
+          .wow.fadeInUp
+            +causes({
+              img: 'causes-05-372x396',
+              title: 'Preventing Hunger',
+              donate: {
+                complete: '$12,180',
+                all: '$35,000'
+              }
+            })
+        .col-md-6.col-lg-4.wow-outer
+          .wow.fadeInUp
+            +causes({
+              img: 'causes-06-372x396',
+              title: 'Warm Clothing for Children',
+              donate: {
+                complete: '$65,110',
+                all: '$80,000'
+              }
+            })
+        .col-md-6.col-lg-4.wow-outer
+          .wow.fadeInUp
+            +causes({
+              img: 'causes-07-372x396',
+              title: 'Preventing Diseases',
+              donate: {
+                complete: '$60,920',
+                all: '$90,000'
+              }
+            })
+
+  include ../sections/_footer-minimal
